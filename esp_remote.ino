@@ -53,6 +53,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 void setup() {
   Serial.begin(115200);
+  Serial.setTimeout(50);
   setup_wifi();
   client.setServer(mqttServer, 1883);
   client.setCallback(callback);
